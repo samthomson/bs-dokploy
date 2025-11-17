@@ -1,6 +1,15 @@
 publicDomain: "https://bs.samt.st"
 databasePath: data/sqlite.db
 
+allowedMimeTypes:
+  - image/jpeg
+  - image/jpg
+  - image/png
+  - image/gif
+  - image/webp
+  - video/mp4
+  - video/webm
+
 dashboard:
   enabled: true
   username: ${DASHBOARD_USER}
@@ -16,13 +25,13 @@ upload:
   requireAuth: false         # turn off for quick testing, then re-enable
   # allowList: []
   allowedMimeTypes:
-    - "image/jpeg"
-    - "image/jpg"
-    - "image/png"
-    - "image/gif"
-    - "image/webp"
-    - "video/mp4"
-    - "video/webm"
+    - image/jpeg
+    - image/jpg
+    - image/png
+    - image/gif
+    - image/webp
+    - video/mp4
+    - video/webm
 
 media:
   enabled: true
