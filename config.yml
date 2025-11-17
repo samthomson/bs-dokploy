@@ -1,0 +1,21 @@
+publicDomain: "https://bs.samt.st"
+databasePath: data/sqlite.db
+
+dashboard:
+  enabled: true
+  username: ${DASHBOARD_USER}
+  password: ${DASHBOARD_PASS}
+
+storage:
+  backend: local
+  local:
+    dir: ./data/blobs
+
+upload:
+  enabled: true
+  requireAuth: true         # turn off for quick testing, then re-enable
+  allowList: []
+
+media:
+  enabled: true
+  requireAuth: false         # turn off for quick testing, then re-enable
