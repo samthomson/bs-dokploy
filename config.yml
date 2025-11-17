@@ -13,8 +13,8 @@ storage:
 
 upload:
   enabled: true
-  requireAuth: true         # turn off for quick testing, then re-enable
-  allowList: []
+  requireAuth: false         # turn off for quick testing, then re-enable
+  # allowList: []
 
 media:
   enabled: true
