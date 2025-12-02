@@ -1,15 +1,14 @@
 services:
   blossom:
-    image: ghcr.io/hzrd149/blossom-server:master
+    build: .
     environment:
       DASHBOARD_USER: admin
       DASHBOARD_PASS: ${BLOSSOM_DASHBOARD_PASS}
     container_name: blossom
     ports:
-      - "3001:3000"           # Dokploy can put this behind your domain + TLS
+      - "3001:3000"
     volumes:
       - blossom_data:/app/data
-      - ./config.yml:/app/config.yml:ro
     restart: unless-stopped
 
 volumes:
