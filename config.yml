@@ -1,4 +1,6 @@
-publicDomain: "https://bs.samt.st"
+# Leave empty to use the domain from incoming requests
+# This works for both local dev and production
+publicDomain: ""
 databasePath: data/sqlite.db
 
 dashboard:
