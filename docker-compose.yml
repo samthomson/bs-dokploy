@@ -2,8 +2,8 @@ services:
   blossom:
     build: .
     environment:
-      DASHBOARD_USER: admin
-      DASHBOARD_PASS: ${BLOSSOM_DASHBOARD_PASS}
+      DASHBOARD_USER: ${DASHBOARD_USER:-admin}
+      DASHBOARD_PASS: ${DASHBOARD_PASS}
     container_name: blossom
     ports:
       - "3001:3000"

@@ -5,25 +5,30 @@ databasePath: data/sqlite.db
 
 dashboard:
   enabled: true
-  username: admin
-  password: pass
+  username: "${DASHBOARD_USER}"
+  password: "${DASHBOARD_PASS}"
 
 storage:
   backend: local
   local:
     dir: ./data/blobs
   # Rules determine what blobs are accepted and how long they're kept
+  # Add your npub(s) converted to hex to restrict storage to specific users
   rules:
     - type: "image/*"
-      expiration: 1 month
+      expiration: never
+      # pubkeys:
+      #   - "your-hex-pubkey-here"
     - type: "video/*"
-      expiration: 1 month
+      expiration: never
+      # pubkeys:
+      #   - "your-hex-pubkey-here"
     - type: "*"
-      expiration: 1 week
+      expiration: never
 
 upload:
   enabled: true
-  requireAuth: false         # turn off for quick testing, then re-enable
+  requireAuth: true          # require nostr auth for uploads
 
 media:
   enabled: true
