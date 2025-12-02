@@ -12,8 +12,8 @@ allowedMimeTypes:
 
 dashboard:
   enabled: true
-  username: ${DASHBOARD_USER}
-  password: ${DASHBOARD_PASS}
+  username: admin
+  password: pass
 
 storage:
   backend: local
