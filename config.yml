@@ -1,15 +1,6 @@
 publicDomain: "https://bs.samt.st"
 databasePath: data/sqlite.db
 
-allowedMimeTypes:
-  - image/jpeg
-  - image/jpg
-  - image/png
-  - image/gif
-  - image/webp
-  - video/mp4
-  - video/webm
-
 dashboard:
   enabled: true
   username: admin
@@ -19,19 +10,18 @@ storage:
   backend: local
   local:
     dir: ./data/blobs
+  # Rules determine what blobs are accepted and how long they're kept
+  rules:
+    - type: "image/*"
+      expiration: 1 month
+    - type: "video/*"
+      expiration: 1 month
+    - type: "*"
+      expiration: 1 week
 
 upload:
   enabled: true
   requireAuth: false         # turn off for quick testing, then re-enable
-  # allowList: []
-  allowedMimeTypes:
-    - image/jpeg
-    - image/jpg
-    - image/png
-    - image/gif
-    - image/webp
-    - video/mp4
-    - video/webm
 
 media:
   enabled: true
