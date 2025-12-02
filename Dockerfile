@@ -1,11 +1,11 @@
 FROM ghcr.io/hzrd149/blossom-server:master
 
-# Copy default config (used if no env var provided)
-COPY config.yml /app/config.yml
-
-# Copy and set up entrypoint script
+# Copy config generator script
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+WORKDIR /app
+
+# Generate config then run the server
+ENTRYPOINT ["/bin/sh", "-c", "/app/entrypoint.sh && exec node ."]
 

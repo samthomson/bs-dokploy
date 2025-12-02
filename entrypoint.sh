@@ -70,8 +70,4 @@ EOF
 echo "Generated config.yml:"
 cat /app/config.yml
 echo ""
-echo "Starting Blossom server..."
-
-# Run the original entrypoint
-exec node /app/dist/index.js
 
