@@ -13,18 +13,23 @@ storage:
   local:
     dir: ./data/blobs
   # Rules determine what blobs are accepted and how long they're kept
-  # Add your npub(s) converted to hex to restrict storage to specific users
+  # Pubkeys are hex format (convert npub at https://nostrcheck.me/converter/)
   rules:
     - type: "image/*"
       expiration: never
-      # pubkeys:
-      #   - "your-hex-pubkey-here"
+      pubkeys:
+        - "2093baa8621c5b255e8f4fc2c6fdfc10d8a5598a25517664efaba860735f1030"
+        - "YOUR_SECOND_HEX_PUBKEY_HERE"
     - type: "video/*"
       expiration: never
-      # pubkeys:
-      #   - "your-hex-pubkey-here"
+      pubkeys:
+        - "2093baa8621c5b255e8f4fc2c6fdfc10d8a5598a25517664efaba860735f1030"
+        - "YOUR_SECOND_HEX_PUBKEY_HERE"
     - type: "*"
       expiration: never
+      pubkeys:
+        - "2093baa8621c5b255e8f4fc2c6fdfc10d8a5598a25517664efaba860735f1030"
+        - "YOUR_SECOND_HEX_PUBKEY_HERE"
 
 upload:
   enabled: true

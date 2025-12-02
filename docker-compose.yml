@@ -4,6 +4,9 @@ services:
     environment:
       DASHBOARD_USER: ${DASHBOARD_USER:-admin}
       DASHBOARD_PASS: ${DASHBOARD_PASS}
+      ALLOWED_PUBKEYS: ${ALLOWED_PUBKEYS:-}
+      REQUIRE_UPLOAD_AUTH: ${REQUIRE_UPLOAD_AUTH:-true}
+      REQUIRE_MEDIA_AUTH: ${REQUIRE_MEDIA_AUTH:-false}
     container_name: blossom
     ports:
       - "3001:3000"
