@@ -7,8 +7,8 @@ services:
       ALLOWED_PUBKEYS: ${ALLOWED_PUBKEYS:-}
       REQUIRE_UPLOAD_AUTH: ${REQUIRE_UPLOAD_AUTH:-true}
       REQUIRE_MEDIA_AUTH: ${REQUIRE_MEDIA_AUTH:-false}
-    ports:
-      - "3001:3000"
+    expose:
+      - "3000"
     volumes:
       - blossom_data:/app/data
     restart: unless-stopped
