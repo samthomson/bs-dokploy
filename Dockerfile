@@ -7,5 +7,5 @@ RUN chmod +x /app/entrypoint.sh
 WORKDIR /app
 
 # Generate config then run the server
-ENTRYPOINT ["/bin/sh", "-c", "/app/entrypoint.sh && exec node ."]
+ENTRYPOINT ["/bin/sh", "-c", "/app/entrypoint.sh && exec /usr/local/bin/node ."]
 
